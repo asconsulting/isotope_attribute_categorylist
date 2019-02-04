@@ -14,6 +14,7 @@
 namespace IsotopeAsc\Model\Attribute;
 
 use Isotope\Interfaces\IsotopeAttribute;
+use Isotope\Model\Attribute\AbstractAttributeWithOptions;
 
 
 /**
