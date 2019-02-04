@@ -1,0 +1,15 @@
+<?php if ($this->headline): ?>
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<?php if (!empty($this->categories)): ?>
+<div class='attribute_categories_wrapper'>
+	<?php foreach ($this->categories as $arrCategory): ?>
+	<div class='attribute_category_wrapper'>
+		<a class='attribute_category' href='<?php echo $arrCategory['alias']; ?>.html'>
+			<img src='<?php echo $arrCategory['image']; ?>' alt='<?php echo htmlspecialchars($arrCategory['description']); ?>'>
+		</a>
+	</div>
+	<?php endforeach; ?>
+</div>
+<?php endif; ?>

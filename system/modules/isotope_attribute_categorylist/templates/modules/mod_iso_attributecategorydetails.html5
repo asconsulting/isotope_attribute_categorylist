@@ -1,0 +1,10 @@
+<?php if ($this->headline): ?>
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<div class='attribute_label'><?php echo $this->attribute_label; ?></div>
+<div class='attribute_field_name'><?php echo $this->attribute_field_name; ?></div>
+<div class='attribute_option_title'><?php echo $this->attribute_option_title; ?></div>
+<div class='attribute_option_value'><?php echo $this->attribute_option_value; ?></div>
+<div class='attribute_option_description'><?php echo $this->attribute_option_description; ?></div>
+<div class='attribute_option_image'><?php echo $this->attribute_option_image; ?></div>
