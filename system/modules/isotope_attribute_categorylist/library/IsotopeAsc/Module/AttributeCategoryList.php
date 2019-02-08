@@ -30,7 +30,7 @@ use Isotope\RequestCache\Sort;
 /**
  * Isotope\Module\AttributeCategoryList
  */
-class AttributeCategoryList extends \Isotope\Module\Module
+class AttributeCategoryList extends Contao\Module
 {
     /**
      * Template
