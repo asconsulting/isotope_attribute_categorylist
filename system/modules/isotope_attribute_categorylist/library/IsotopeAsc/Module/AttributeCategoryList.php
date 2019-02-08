@@ -30,7 +30,7 @@ use Isotope\RequestCache\Sort;
 /**
  * Isotope\Module\AttributeCategoryList
  */
-class AttributeCategoryList extends Contao\Module
+class AttributeCategoryList extends Isotope\Module
 {
     /**
      * Template
@@ -73,6 +73,7 @@ class AttributeCategoryList extends Contao\Module
      */
     public function generate()
     {
+		die("Module Generate");
         if ('BE' === TL_MODE) {
             /** @var \BackendTemplate|object $objTemplate */
             $objTemplate = new \BackendTemplate('be_wildcard');
