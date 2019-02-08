@@ -34,7 +34,7 @@ class AttributeCategory extends Frontend {
 	
 	public function loadListPageFromUrl($arrFragments)
     {
-		die("Page Lookup");
+
 		if ($objPage = \PageModel::findPublishedByIdOrAlias($arrFragments[0])) {
 			return $arrFragments;
 		}
