@@ -22,7 +22,7 @@ $GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_productlist']	= 'Isot
 /**
  * Attributes
  */
-\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
+//\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
 
 
 /**
