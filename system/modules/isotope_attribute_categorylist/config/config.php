@@ -14,8 +14,6 @@
 /**
  * Front end modules
  */
- 
- // Front End Modules
 $GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_list']		 	= 'IsotopeAsc\Module\AttributeCategoryList'; 
 $GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_details']		= 'IsotopeAsc\Module\AttributeCategoryDetails'; 
 $GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_productlist']	= 'IsotopeAsc\Module\AttributeProductList'; 
@@ -24,7 +22,7 @@ $GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_productlist']	= 'Isot
 /**
  * Attributes
  */
-//\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
+\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
 
 
 /**
@@ -37,3 +35,5 @@ $GLOBALS['BE_FFL']['attributeCategory'] = 'CheckBoxWizard';
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('IsotopeAsc\Frontend\AttributeCategory', 'loadListPageFromUrl');
+
+die("Module Loaded");
