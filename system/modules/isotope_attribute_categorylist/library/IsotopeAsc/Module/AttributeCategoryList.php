@@ -52,6 +52,7 @@ class AttributeCategoryList extends \Isotope\Module\Module
      */
     public function __construct($objModule, $strColumn = 'main')
     {
+		die("Module Construct");
        // parent::__construct($objModule, $strColumn);
 
         //$this->iso_filterModules = deserialize($this->iso_filterModules);
