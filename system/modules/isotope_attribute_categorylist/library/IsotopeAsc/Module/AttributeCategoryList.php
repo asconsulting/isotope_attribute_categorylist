@@ -91,7 +91,8 @@ class AttributeCategoryList extends \Isotope\Module\Module
 
     protected function compile()
     {
-        $objAttribute = Attribute::findOneBy('id', $this->categoryAttribute);
+       /*
+	   $objAttribute = Attribute::findOneBy('id', $this->categoryAttribute);
 
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
@@ -110,6 +111,7 @@ class AttributeCategoryList extends \Isotope\Module\Module
 		}
 		
         $this->Template->categories = $arrOptions;
+		*/
     }
 
 }
