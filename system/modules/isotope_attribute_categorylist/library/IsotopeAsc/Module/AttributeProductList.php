@@ -272,7 +272,7 @@ class AttributeProductList extends \Isotope\Module\Module
         /** @var \Isotope\Model\Product\Standard $objProduct */
         foreach ($arrProducts as $objProduct) {
             /** @var ProductType $type */
-        // $type = $objProduct->getRelated('type');
+			$type = $objProduct->getRelated('type');
 
             $arrConfig = array(
                 'module'        => $this,
