@@ -30,7 +30,7 @@ use Isotope\RequestCache\Sort;
 /**
  * Isotope\Module\AttributeProductList
  */
-class AttributeProductList extends Module
+class AttributeProductList extends Isotope\Module
 {
     /**
      * Template
