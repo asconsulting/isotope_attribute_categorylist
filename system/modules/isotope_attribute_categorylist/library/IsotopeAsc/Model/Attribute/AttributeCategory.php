@@ -18,7 +18,7 @@ use Isotope\Model\Attribute\AbstractAttributeWithOptions;
 
 
 /**
- * Class Isotope\Model\Attribute\AttributeCategory
+ * Class IsotopeAsc\Model\Attribute\AttributeCategory
  */
 class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeAttribute
 {
