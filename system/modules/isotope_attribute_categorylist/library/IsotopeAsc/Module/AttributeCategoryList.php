@@ -13,7 +13,7 @@
 
 namespace IsotopeAsc\Module;
 
-use Isotope\Module;
+use Isotope\Module\Module;
 /*
 use Haste\Generator\RowClass;
 use Haste\Http\Response\HtmlResponse;
