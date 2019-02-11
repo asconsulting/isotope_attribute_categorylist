@@ -35,3 +35,9 @@ $GLOBALS['BE_FFL']['attributeCategory'] = 'CheckBoxWizard';
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('IsotopeAsc\Frontend\AttributeCategory', 'loadListPageFromUrl');
+
+
+/**
+ * Models
+ */ 
+$GLOBALS['TL_MODELS'][\Isotope\Model\Attribute::getTable()] = 'IsotopeAsc\Model\Attribute';
