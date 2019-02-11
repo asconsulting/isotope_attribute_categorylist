@@ -99,7 +99,7 @@ class AttributeCategoryList extends Module
     protected function compile()
     {
 
-	   $objAttribute = Attribute::findByPk($this->categoryAttribute);
+	   $objAttribute = AttributeCategory::findByPk($this->categoryAttribute);
 
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
