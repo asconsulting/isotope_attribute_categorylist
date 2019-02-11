@@ -55,11 +55,10 @@ class AttributeCategoryList extends Module
      */
     public function __construct($objModule, $strColumn = 'main')
     {
-		die("Module Construct");
-       // parent::__construct($objModule, $strColumn);
+		parent::__construct($objModule, $strColumn);
 
-        //$this->iso_filterModules = deserialize($this->iso_filterModules);
-       // $this->iso_productcache  = deserialize($this->iso_productcache);
+        $this->iso_filterModules = deserialize($this->iso_filterModules);
+		$this->iso_productcache  = deserialize($this->iso_productcache);
 
         if (!is_array($this->iso_filterModules)) {
             $this->iso_filterModules = array();
