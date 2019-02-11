@@ -95,8 +95,7 @@ class AttributeCategoryList extends Module
 
     protected function compile()
     {
-		die("Module Compile - AttributeCategoryList");
-/*
+
 	   $objAttribute = Attribute::findOneBy('id', $this->categoryAttribute);
 
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
@@ -116,7 +115,6 @@ class AttributeCategoryList extends Module
 		}
 		
         $this->Template->categories = $arrOptions;
-*/
     }
 
 }
