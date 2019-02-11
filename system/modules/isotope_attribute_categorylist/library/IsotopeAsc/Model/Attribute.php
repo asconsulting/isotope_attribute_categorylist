@@ -24,7 +24,7 @@ use Isotope\Translation;
 /**
  * Class IsotopeAsc\Model\Attribute\AttributeCategory
  */
-class Attribute extends Isotope_Attribute;
+class Attribute extends Isotope_Attribute
 {
 
 }
