@@ -14,6 +14,8 @@
 namespace IsotopeAsc\Module;
 
 use Isotope\Module\Module;
+use Isotope\Model\Attribute;
+
 /*
 use Haste\Generator\RowClass;
 use Haste\Http\Response\HtmlResponse;
