@@ -16,6 +16,7 @@ namespace IsotopeAsc\Module;
 use Isotope\Module\Module;
 use Isotope\Model;
 use Isotope\Model\Attribute;
+use IsotopeAsc\Model\Attribute\AttributeCategory;
 
 
 /*
@@ -104,6 +105,8 @@ class AttributeCategoryList extends Module
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
 		}
+	
+		die("Options");
 	
 		$objOptions = AttributeOption::findByAttribute($objAttribute);
 		
