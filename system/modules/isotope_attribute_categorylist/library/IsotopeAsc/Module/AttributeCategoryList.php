@@ -75,7 +75,6 @@ class AttributeCategoryList extends Module
      */
     public function generate()
     {
-		die("Module Generate");
         if ('BE' === TL_MODE) {
             /** @var \BackendTemplate|object $objTemplate */
             $objTemplate = new \BackendTemplate('be_wildcard');
