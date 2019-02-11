@@ -22,7 +22,7 @@ use Isotope\Model\Attribute\AbstractAttributeWithOptions;
 /**
  * Class IsotopeAsc\Model\Attribute\AttributeCategory
  */
-class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeAttribute
+class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeAttribute, IsotopeAttributeWithOptions
 {
 
     /**
