@@ -13,6 +13,7 @@
 
 namespace IsotopeAsc\Model\Attribute;
 
+use Isotope\Model;
 use Isotope\Interfaces\IsotopeAttribute;
 use Isotope\Model\Attribute\AbstractAttributeWithOptions;
 
