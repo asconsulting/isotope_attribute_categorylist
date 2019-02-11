@@ -40,6 +40,7 @@ class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeA
     public function saveToDCA(array &$arrData)
     {
         parent::saveToDCA($arrData);
+        $arrData['fields'][$this->field_name]['inputType'] = "checkboxWizard";
         $arrData['fields'][$this->field_name]['sql'] = "mediumtext NULL";
     }
 
