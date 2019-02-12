@@ -21,6 +21,8 @@ use Isotope\Model\ProductCache;
 use Isotope\Model\ProductType;
 use Isotope\Module\Module;
 use IsotopeAsc\Model\Attribute\AttributeCategory;
+use Isotope\RequestCache\FilterQueryBuilder;
+use Isotope\RequestCache\Sort;
 
 /*
 use Haste\Generator\RowClass;
