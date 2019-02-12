@@ -57,7 +57,7 @@ class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeA
     }
 	
 	static function findByPk($id) {
-		parent::findByPk($id);
+		return parent::findByPk($id);
 	}
 
 }
