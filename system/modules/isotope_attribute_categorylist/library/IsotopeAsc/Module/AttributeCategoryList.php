@@ -101,31 +101,22 @@ class AttributeCategoryList extends Module
     protected function compile()
     {
 
-		//$objDatabase = \Database::getInstance()->prepare("SELECT * FROM tl_iso_attribute WHERE id=?")->execute($this->categoryAttribute);
-	
-		//AttributeCategory::createModelFromDbResult($objDatabase);
-	
-		//var_dump($objDatabase);
-		//die();
-	
-		
-		
-		
-		\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
-		
-		$arrOptions['column'][] = "type='attributeCategory'";
-		$arrOptions['column'][] = "id=" .intval($this->categoryAttribute);
-		
-		//$objAttribute = AttributeCategory::findValid($arrOptions);
 		$objAttribute = AttributeCategory::findByAttribute($this->categoryAttribute);
-		var_dump($objAttribute);
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
 		}
-	
-		var_dump($objAttribute);
-	
-		$objOptions = AttributeOption::findByAttribute($objAttribute);
+
+		$objResult = \Datbase::getInstance()->prepare('SELECT id FROM ' .\Isotope\Model\AttributeOption::getTable() .' WHERE pid=?')->execute($objAttribute->id);
+		$arrIds = array();
+		if ($objResult) {
+			while($objResult->next()) {
+				$arrIds[] = $objResult->id;
+			}
+		}
+		
+		$objOptions = AttributeOption::findPublishedByIds($arrIds);
+		var_dump($objOptions);
+		die();
 		
 		$arrOptions = array();
 		while ($objOptions->next()) {
