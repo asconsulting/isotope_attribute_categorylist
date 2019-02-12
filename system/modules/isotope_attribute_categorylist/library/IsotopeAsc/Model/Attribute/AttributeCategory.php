@@ -56,8 +56,12 @@ class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeA
         $arrData['fields'][$this->field_name]['sql'] = "mediumtext NULL";
     }
 	
-	static function findByPk($id) {
-		return parent::findByPk($id);
+	static function findByAttribute($id) {
+		$arrOptions['column'][] = "type='attributeCategory'";
+		$arrOptions['column'][] = "id=" .intval($id);
+		
+		//$objAttribute = AttributeCategory::findValid($arrOptions);
+		return static::find($arrOptions);
 	}
 
 }
