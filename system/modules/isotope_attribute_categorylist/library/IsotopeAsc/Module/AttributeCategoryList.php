@@ -101,14 +101,14 @@ class AttributeCategoryList extends Module
     protected function compile()
     {
 
-		$objDatabase = \Database::getInstance()->prepare("SELECT * FROM tl_iso_attribute WHERE id=?")->execute($this->categoryAttribute);
+		//$objDatabase = \Database::getInstance()->prepare("SELECT * FROM tl_iso_attribute WHERE id=?")->execute($this->categoryAttribute);
 	
-		AttributeCategory::createModelFromDbResult($objDatabase);
+		//AttributeCategory::createModelFromDbResult($objDatabase);
 	
-		var_dump($objDatabase);
-		die();
+		//var_dump($objDatabase);
+		//die();
 	
-	   //$objAttribute = AttributeCategory::findByPk($this->categoryAttribute);
+	   $objAttribute = AttributeCategory::findByPk($this->categoryAttribute);
 
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
