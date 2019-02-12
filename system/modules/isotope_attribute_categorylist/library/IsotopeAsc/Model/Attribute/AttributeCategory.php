@@ -26,6 +26,15 @@ use Isotope\Model\Attribute\AbstractAttributeWithOptions;
 class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeAttribute, IsotopeAttributeWithOptions
 {
 
+    public function __construct(\Database\Result $objResult = null)
+    {
+        // This class should not be registered
+        // Set type or ModelType would throw an exception
+        $this->arrData['type'] = 'attributeCategory';
+
+        parent::__construct($objResult);
+    }
+
     /**
      * Adjust the options wizard for this attribute
      * @return  array
