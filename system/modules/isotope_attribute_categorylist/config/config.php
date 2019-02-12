@@ -41,4 +41,4 @@ $GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('IsotopeAsc\Frontend\Attribut
 /**
  * Models
  */ 
-//$GLOBALS['TL_MODELS'][\Isotope\Model\Attribute::getTable()] = 'IsotopeAsc\Model\Attribute';
+$GLOBALS['TL_MODELS'][\Isotope\Model\Attribute::getTable()] = 'IsotopeAsc\Model\Attribute';
