@@ -14,7 +14,6 @@
 namespace IsotopeAsc\Module;
 
 use Isotope\Module\Module;
-//use Isotope\Model;
 use Isotope\Model\Attribute;
 use Isotope\Model\AttributeOption;
 use IsotopeAsc\Model\Attribute\AttributeCategory;

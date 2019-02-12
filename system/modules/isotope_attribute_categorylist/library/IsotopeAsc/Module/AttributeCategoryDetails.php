@@ -13,6 +13,12 @@
 
 namespace IsotopeAsc\Module;
 
+use Isotope\Module\Module;
+use Isotope\Model\Attribute;
+use Isotope\Model\AttributeOption;
+use IsotopeAsc\Model\Attribute\AttributeCategory;
+
+/*
 use Haste\Generator\RowClass;
 use Haste\Http\Response\HtmlResponse;
 use Haste\Input\Input;
@@ -25,7 +31,7 @@ use Isotope\Model\ProductType;
 use Isotope\Module;
 use Isotope\RequestCache\FilterQueryBuilder;
 use Isotope\RequestCache\Sort;
-
+*/
 
 /**
  * Isotope\Module\AttributeCategoryList
