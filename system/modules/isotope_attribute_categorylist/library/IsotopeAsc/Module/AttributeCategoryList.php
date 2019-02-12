@@ -19,22 +19,6 @@ use Isotope\Model\AttributeOption;
 use IsotopeAsc\Model\Attribute\AttributeCategory;
 
 
-/*
-use Haste\Generator\RowClass;
-use Haste\Http\Response\HtmlResponse;
-use Haste\Input\Input;
-use Isotope\Isotope;
-use Isotope\Model\Attribute;
-use IsotopeAsc\Model\Attribute\AttributeCategory;
-use Isotope\Model\AttributeOption;
-use Isotope\Model\Product;
-use Isotope\Model\ProductCache;
-use Isotope\Model\ProductType;
-use Isotope\Module;
-use Isotope\RequestCache\FilterQueryBuilder;
-use Isotope\RequestCache\Sort;
-*/
-
 /**
  * Isotope\Module\AttributeCategoryList
  */
