@@ -55,5 +55,9 @@ class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeA
         $arrData['fields'][$this->field_name]['inputType'] = "checkboxWizard";
         $arrData['fields'][$this->field_name]['sql'] = "mediumtext NULL";
     }
+	
+	public function findByPk($id) {
+		parent::findByPk($id);
+	}
 
 }
