@@ -108,7 +108,7 @@ class AttributeCategoryList extends Module
 		//var_dump($objDatabase);
 		//die();
 	
-		//$objAttribute = AttributeCategory::findByPk($this->categoryAttribute);
+		
 		
 		
 		\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
@@ -116,8 +116,8 @@ class AttributeCategoryList extends Module
 		$arrOptions['column'][] = "type='attributeCategory'";
 		$arrOptions['column'][] = "id=" .intval($this->categoryAttribute);
 		
-		$objAttribute = AttributeCategory::findValid($arrOptions);
-		
+		//$objAttribute = AttributeCategory::findValid($arrOptions);
+		$objAttribute = AttributeCategory::findByPk($this->categoryAttribute);
 		
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
