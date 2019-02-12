@@ -103,6 +103,8 @@ class AttributeCategoryList extends Module
 
 		$objDatabase = \Database::getInstance()->prepare("SELECT * FROM tl_iso_attribute WHERE id=?")->execute($this->categoryAttribute);
 	
+		AttributeCategory::createModelFromDbResult($objDatabase);
+	
 		var_dump($objDatabase);
 		die();
 	
