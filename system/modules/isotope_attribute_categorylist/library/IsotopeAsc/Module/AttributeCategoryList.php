@@ -118,7 +118,7 @@ class AttributeCategoryList extends Module
 		
 		//$objAttribute = AttributeCategory::findValid($arrOptions);
 		$objAttribute = AttributeCategory::findByPk($this->categoryAttribute);
-		
+		var_dump($objAttribute);
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
 		}
