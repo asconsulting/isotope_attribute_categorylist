@@ -13,9 +13,13 @@
 
 namespace IsotopeAsc\Module;
 
-use Isotope\Module\Module;
+use Isotope\Isotope;
 use Isotope\Model\Attribute;
 use Isotope\Model\AttributeOption;
+use Isotope\Model\Product;
+use Isotope\Model\ProductCache;
+use Isotope\Model\ProductType;
+use Isotope\Module\Module;
 use IsotopeAsc\Model\Attribute\AttributeCategory;
 
 /*
