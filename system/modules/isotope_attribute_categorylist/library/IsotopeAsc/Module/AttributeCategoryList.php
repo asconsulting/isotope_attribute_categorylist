@@ -113,7 +113,7 @@ class AttributeCategoryList extends Module
 		$arrOptions['column'][] = "type='attributeCategory'";
 		$arrOptions['column'][] = "id=" .intval($this->categoryAttribute);
 		
-		$objAttribute = Attribute::findValid($arrOptions);
+		$objAttribute = AttributeCategory::findValid($arrOptions);
 		
 		
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
