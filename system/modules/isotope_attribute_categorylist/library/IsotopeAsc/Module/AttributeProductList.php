@@ -13,6 +13,12 @@
 
 namespace IsotopeAsc\Module;
 
+use Isotope\Module\Module;
+use Isotope\Model\Attribute;
+use Isotope\Model\AttributeOption;
+use IsotopeAsc\Model\Attribute\AttributeCategory;
+
+/*
 use Haste\Generator\RowClass;
 use Haste\Http\Response\HtmlResponse;
 use Haste\Input\Input;
@@ -25,7 +31,7 @@ use Isotope\Model\ProductType;
 use Isotope\Module;
 use Isotope\RequestCache\FilterQueryBuilder;
 use Isotope\RequestCache\Sort;
-
+*/
 
 /**
  * Isotope\Module\AttributeProductList
@@ -135,13 +141,23 @@ class AttributeProductList extends \Isotope\Module\Module
 			}
 		}
 		
-		$objAttribute = Attribute::findOneBy('id', $attributeId);
-
+		$objAttribute = AttributeCategory::findByAttribute($attributeId);
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
 			return;
 		}
-	
-		$objOptions = AttributeOption::findByAttribute($objAttribute);
+
+		$objResult = \Database::getInstance()->prepare('SELECT id FROM ' .\Isotope\Model\AttributeOption::getTable() .' WHERE pid=?')->execute($objAttribute->id);
+		$arrIds = array();
+		if ($objResult) {
+			while($objResult->next()) {
+				$arrIds[] = $objResult->id;
+			}
+		}
+		
+		$objOptions = AttributeOption::findPublishedByIds($arrIds);
+		
+		
+		
 		$attributeValue = substr($pageAlias, (strlen($attributeName) + 1));
 		
 		while($objOptions->next()) {
