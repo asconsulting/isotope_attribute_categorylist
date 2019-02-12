@@ -115,8 +115,6 @@ class AttributeCategoryList extends Module
 		}
 		
 		$objOptions = AttributeOption::findPublishedByIds($arrIds);
-		var_dump($objOptions);
-		die();
 		
 		$arrOptions = array();
 		while ($objOptions->next()) {
