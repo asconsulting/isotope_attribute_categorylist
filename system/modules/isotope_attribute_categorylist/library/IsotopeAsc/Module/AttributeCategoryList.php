@@ -106,7 +106,7 @@ class AttributeCategoryList extends Module
 			return;
 		}
 
-		$objResult = \Datbase::getInstance()->prepare('SELECT id FROM ' .\Isotope\Model\AttributeOption::getTable() .' WHERE pid=?')->execute($objAttribute->id);
+		$objResult = \Database::getInstance()->prepare('SELECT id FROM ' .\Isotope\Model\AttributeOption::getTable() .' WHERE pid=?')->execute($objAttribute->id);
 		$arrIds = array();
 		if ($objResult) {
 			while($objResult->next()) {
