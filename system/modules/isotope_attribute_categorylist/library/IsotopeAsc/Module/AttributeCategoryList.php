@@ -115,7 +115,6 @@ class AttributeCategoryList extends Module
 		}
 	
 		var_dump($objAttribute);
-
 	
 		$objOptions = AttributeOption::findByAttribute($objAttribute);
 		
