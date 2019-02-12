@@ -110,7 +110,7 @@ class AttributeCategoryDetails extends \Isotope\Module\Module
 				break 1;
 			}
 		}
-		
+		/*
 		$objAttribute = Attribute::findOneBy('id', $attributeId);
 
 		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
@@ -118,9 +118,24 @@ class AttributeCategoryDetails extends \Isotope\Module\Module
 		}
 	
 		$objOptions = AttributeOption::findByAttribute($objAttribute);
-		$attributeValue = substr($pageAlias, (strlen($attributeName) + 1));
+		*/
 		
+		$objAttribute = AttributeCategory::findByAttribute($attributeId);
+		if (!$objAttribute || $objAttribute->type != 'attributeCategory') {
+			return;
+		}
 
+		$objResult = \Database::getInstance()->prepare('SELECT id FROM ' .\Isotope\Model\AttributeOption::getTable() .' WHERE pid=?')->execute($objAttribute->id);
+		$arrIds = array();
+		if ($objResult) {
+			while($objResult->next()) {
+				$arrIds[] = $objResult->id;
+			}
+		}
+		
+		$objOptions = AttributeOption::findPublishedByIds($arrIds);		
+		
+		$attributeValue = substr($pageAlias, (strlen($attributeName) + 1));
 		
 		while($objOptions->next()) {
 			if ($objOptions->optionAlias == $attributeValue) {
