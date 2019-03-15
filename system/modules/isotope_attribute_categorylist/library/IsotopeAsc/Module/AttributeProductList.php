@@ -394,8 +394,21 @@ class AttributeProductList extends \Isotope\Module\Module
                  'sorting' => $arrSorting,
             )
         );
+		
+		$arrProducts = (null === $objProducts) ? array() : $objProducts->getModels();
 
-        return (null === $objProducts) ? array() : $objProducts->getModels();
+		$arrTemp = array();
+		$arrIds = array();
+		foreach ($arrProducts as $objProduct) {
+			if (!in_array($objProduct->id, $arrIds)) {
+				$arrIds[] = $objProduct->id;
+				$arrTemp[] = $objProduct;
+			}
+		}
+		$arrProducts = $arrTemp;
+		
+		
+        return $arrProducts;
     }
 
     /**
