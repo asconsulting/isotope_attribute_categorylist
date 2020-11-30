@@ -1,6 +1,6 @@
 {
     "name":"asconsulting/isotope_attribute_categorylist",
-    "description":"Table attribute for Isotope eCommerce and Contao CMS.",
+    "description":"Category List attribute for Isotope eCommerce and Contao CMS.",
     "homepage": "https://andrewstevens.consulting",
     "keywords":["contao", "isotope", "attribute", "categories", "details"],
     "type":"contao-module",
