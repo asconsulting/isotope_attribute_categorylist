@@ -435,7 +435,11 @@ class AttributeProductList extends \Isotope\Module\Module
 		if (\Input::get('wwd') == 'yes' || $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
 			var_dump($queryBuilder->getSqlValues());
 			echo "<hr>";
+			var_dump($queryBuilder->getFilters());
+			echo "<hr>";
 		}
+		
+		$queryBuilder->getFilters()
 		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
