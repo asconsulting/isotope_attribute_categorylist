@@ -151,8 +151,6 @@ class AttributeProductList extends \Isotope\Module\Module
 		
 		$objOptions = AttributeOption::findPublishedByIds($arrIds);
 		
-		
-		
 		$attributeValue = substr($pageAlias, (strlen($attributeName) + 1));
 		
 		while($objOptions->next()) {
@@ -262,7 +260,7 @@ class AttributeProductList extends \Isotope\Module\Module
                     \Database::getInstance()->unlockTables();
                 }
             } else {
-                $arrProducts = $this->findProducts();
+                $arrProducts = $this->findProducts(null,  $attributeName, $attributeValueId);
             }
 
             if (!empty($arrProducts)) {
