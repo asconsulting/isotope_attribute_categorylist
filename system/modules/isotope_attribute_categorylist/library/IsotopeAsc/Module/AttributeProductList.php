@@ -440,6 +440,7 @@ class AttributeProductList extends \Isotope\Module\Module
         }
 
         $message = $this->iso_emptyMessage ? $this->iso_noProducts : $GLOBALS['TL_LANG']['MSC']['noProducts'];
+		$message .= " [cat]";
 
         $this->Template->empty    = true;
         $this->Template->type     = 'empty';
