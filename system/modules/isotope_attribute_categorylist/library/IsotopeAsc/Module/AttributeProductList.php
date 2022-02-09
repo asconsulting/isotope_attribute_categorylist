@@ -417,6 +417,9 @@ class AttributeProductList extends \Isotope\Module\Module
             $arrColumns[] = $queryBuilder->getSqlWhere();
         }
 
+		var_dump($arrColumns);
+		echo "<hr>";
+
         $arrSorting = Isotope::getRequestCache()->getSortingsForModules($this->iso_filterModules);
 
         if (empty($arrSorting) && $this->iso_listingSortField != '') {
