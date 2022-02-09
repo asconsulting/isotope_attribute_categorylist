@@ -212,19 +212,6 @@ class AttributeProductList extends \Isotope\Module\Module
             }
         }
 		
-		if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-			echo $pageAlias .'<hr>';
-			echo $_SERVER['REMOTE_ADDR'] .'<hr>';
-			echo $attributeName .'<hr>';
-			echo $strAttributeLabel .'<hr>';
-			echo $attributeId .'<hr>';
-			echo $attributeValue .'<hr>';
-			echo $cacheKey .'<hr>';
-			echo "Products: " .count($arrProducts) .'<hr>';
-			
-			die();
-		}
-		
         if (!is_array($arrProducts)) {
             // Display "loading products" message and add cache flag
             if ($this->blnCacheProducts) {
@@ -246,6 +233,21 @@ class AttributeProductList extends \Isotope\Module\Module
 
                 // Load products
                 $arrProducts = $this->findProducts($arrCacheIds, $attributeName, $attributeValueId);
+
+
+				
+				if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+					echo $pageAlias .'<hr>';
+					echo $_SERVER['REMOTE_ADDR'] .'<hr>';
+					echo $attributeName .'<hr>';
+					echo $strAttributeLabel .'<hr>';
+					echo $attributeId .'<hr>';
+					echo $attributeValue .'<hr>';
+					echo $cacheKey .'<hr>';
+					echo "Load Products: " .count($arrProducts) .'<hr>';
+					
+					die();
+				}
 
                 // Decide if we should show the "caching products" message the next time
                 $end = microtime(true) - $start;
@@ -289,7 +291,23 @@ class AttributeProductList extends \Isotope\Module\Module
             if (!empty($arrProducts)) {
                 $arrProducts = $this->generatePagination($arrProducts);
             }
-        }
+        } else {
+
+				
+				if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+					echo $pageAlias .'<hr>';
+					echo $_SERVER['REMOTE_ADDR'] .'<hr>';
+					echo $attributeName .'<hr>';
+					echo $strAttributeLabel .'<hr>';
+					echo $attributeId .'<hr>';
+					echo $attributeValue .'<hr>';
+					echo $cacheKey .'<hr>';
+					echo "Products From Cache: " .count($arrProducts) .'<hr>';
+					
+					die();
+				}
+	
+		}
 
         // No products found
         if (!is_array($arrProducts) || empty($arrProducts)) {
