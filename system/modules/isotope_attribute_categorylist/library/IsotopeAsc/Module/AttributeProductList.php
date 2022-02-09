@@ -131,8 +131,9 @@ class AttributeProductList extends \Isotope\Module\Module
 		$arrUrl = parse_url(\Environment::get('request'));
 		$arrPath = pathinfo($arrUrl['path']);
 		$pageAlias = $arrPath['filename'];
-		if ($_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-			echo $pageAlias;
+		if (\Input::get('wwd') == 'yes') {
+			echo $pageAlias .'<hr>';
+			echo $_SERVER['REMOTE_ADDR'] .'<hr>';
 			die();
 		}
 		
