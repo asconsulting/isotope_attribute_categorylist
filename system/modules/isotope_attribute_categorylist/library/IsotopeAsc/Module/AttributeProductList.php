@@ -232,6 +232,9 @@ class AttributeProductList extends \Isotope\Module\Module
                 $start = microtime(true);
 
                 // Load products
+				if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+					echo "Find Products Call<hr>";
+				}
                 $arrProducts = $this->findProducts($arrCacheIds, $attributeName, $attributeValueId);
 
 
@@ -417,8 +420,10 @@ class AttributeProductList extends \Isotope\Module\Module
             $arrColumns[] = $queryBuilder->getSqlWhere();
         }
 
-		var_dump($arrColumns);
-		echo "<hr>";
+		if (\Input::get('wwd') == 'yes' || $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+			var_dump($arrColumns);
+			echo "<hr>";
+		}
 
         $arrSorting = Isotope::getRequestCache()->getSortingsForModules($this->iso_filterModules);
 
