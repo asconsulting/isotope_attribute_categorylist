@@ -131,11 +131,6 @@ class AttributeProductList extends \Isotope\Module\Module
 		$arrUrl = parse_url(\Environment::get('request'));
 		$arrPath = pathinfo($arrUrl['path']);
 		$pageAlias = $arrPath['filename'];
-		if (\Input::get('wwd') == 'yes') {
-			echo $pageAlias .'<hr>';
-			echo $_SERVER['REMOTE_ADDR'] .'<hr>';
-			die();
-		}
 		
 		if (!$pageAlias) {
 			return '';
@@ -149,6 +144,15 @@ class AttributeProductList extends \Isotope\Module\Module
 				$attributeId = $objAttribute->id;
 				break 1;
 			}
+		}
+		
+		if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+			echo $pageAlias .'<hr>';
+			echo $_SERVER['REMOTE_ADDR'] .'<hr>';
+			echo $attributeName .'<hr>';
+			echo $strAttributeLabel .'<hr>';
+			echo $attributeId .'<hr>';
+			die();
 		}
 		
 		$objAttribute = AttributeCategory::findByAttribute($attributeId);
