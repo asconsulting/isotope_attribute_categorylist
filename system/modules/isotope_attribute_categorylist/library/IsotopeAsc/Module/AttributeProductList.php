@@ -431,6 +431,11 @@ class AttributeProductList extends \Isotope\Module\Module
             $direction = ('DESC' === $this->iso_listingSortDirection ? Sort::descending() : Sort::ascending());
             $arrSorting[$this->iso_listingSortField] = $direction;
         }
+
+		if (\Input::get('wwd') == 'yes' || $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+			var_dump($queryBuilder->getSqlValues());
+			echo "<hr>";
+		}
 		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
