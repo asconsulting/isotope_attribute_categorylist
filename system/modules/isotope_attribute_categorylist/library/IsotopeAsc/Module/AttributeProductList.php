@@ -121,9 +121,18 @@ class AttributeProductList extends \Isotope\Module\Module
 		$strTitle = '';
 		$strDescription = '';
 		
+		/*
 		$pageAlias = \Environment::get('request');
 		if (substr($pageAlias, -5) == '.html') {
 			$pageAlias = substr($pageAlias, 0, -5);
+		}
+		*/
+		
+		$arrUrl = parse_url(\Environment::get('request'));
+		$arrPath = pathinfo($arrUrl['path']);
+		$pageAlias = $arrPath['filename'];
+		if (!$pageAlias) {
+			return '';
 		}
 				
 		$objAttribute = \Database::getInstance()->execute("SELECT id, name, field_name, attributeListPage FROM tl_iso_attribute WHERE type LIKE 'attributeCategory' ORDER BY CHAR_LENGTH(field_name) DESC");	
