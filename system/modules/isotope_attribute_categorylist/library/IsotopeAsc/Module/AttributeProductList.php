@@ -383,9 +383,6 @@ class AttributeProductList extends \Isotope\Module\Module
             $arrSorting[$this->iso_listingSortField] = $direction;
         }
 		
-			var_dump($arrColumns);
-			die();
-		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
             $queryBuilder->getSqlValues(),
