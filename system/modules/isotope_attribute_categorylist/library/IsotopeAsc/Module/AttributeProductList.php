@@ -170,21 +170,7 @@ class AttributeProductList extends \Isotope\Module\Module
 				$strTitle .= $objOptions->label;
 			}
 		}
-		
-
-		
-		if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-			echo $pageAlias .'<hr>';
-			echo $_SERVER['REMOTE_ADDR'] .'<hr>';
-			echo $attributeName .'<hr>';
-			echo $strAttributeLabel .'<hr>';
-			echo $attributeId .'<hr>';
-			echo $attributeValue .'<hr>';
-			
-			
-			die();
-		}
-		
+				
 		$strTitle .= " Products in " .$strAttributeLabel;
 		$strTitle = trim($strTitle);
 		
@@ -203,6 +189,21 @@ class AttributeProductList extends \Isotope\Module\Module
         $cacheKey    = $this->getCacheKey($attributeName, $attributeValue);
         $arrProducts = null;
         $arrCacheIds = null;
+		
+		
+		
+		if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+			echo $pageAlias .'<hr>';
+			echo $_SERVER['REMOTE_ADDR'] .'<hr>';
+			echo $attributeName .'<hr>';
+			echo $strAttributeLabel .'<hr>';
+			echo $attributeId .'<hr>';
+			echo $attributeValue .'<hr>';
+			echo $cacheKey .'<hr>';
+			
+			
+			die();
+		}
 
         // Try to load the products from cache
         if ($this->blnCacheProducts && ($objCache = ProductCache::findByUniqid($cacheKey)) !== null) {
