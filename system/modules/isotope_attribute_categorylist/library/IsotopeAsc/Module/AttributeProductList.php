@@ -436,7 +436,7 @@ class AttributeProductList extends \Isotope\Module\Module
 			echo "SQL Values: ";
 			var_dump($queryBuilder->getSqlValues());
 			echo "<hr>";
-			echo "Filters: ";
+			echo "Filters (OFF): ";
 			var_dump($queryBuilder->getFilters());
 			echo "<hr>";
 		}
