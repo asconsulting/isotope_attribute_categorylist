@@ -439,6 +439,8 @@ class AttributeProductList extends \Isotope\Module\Module
 			echo "Filters (Off): ";
 			var_dump($queryBuilder->getFilters());
 			echo "<hr>";
+			echo "Current: Enabled Sorting";
+			echo "<hr>";
 		}
 		
 		/*
@@ -456,7 +458,9 @@ class AttributeProductList extends \Isotope\Module\Module
         $objProducts = Product::findAvailableBy(
             $arrColumns,
 			$queryBuilder->getSqlValues(),
-			array()
+			array(
+                 'order'   => 'c.sorting'
+			)
         );
 		
 		$arrProducts = (null === $objProducts) ? array() : $objProducts->getModels();
