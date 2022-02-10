@@ -436,7 +436,7 @@ class AttributeProductList extends \Isotope\Module\Module
 			echo "SQL Values: ";
 			var_dump($queryBuilder->getSqlValues());
 			echo "<hr>";
-			echo "Filters (On): ";
+			echo "Filters (Off): ";
 			var_dump($queryBuilder->getFilters());
 			echo "<hr>";
 		}
@@ -455,7 +455,8 @@ class AttributeProductList extends \Isotope\Module\Module
 		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
-			$queryBuilder->getSqlValues()
+			$queryBuilder->getSqlValues(),
+			array()
         );
 		
 		$arrProducts = (null === $objProducts) ? array() : $objProducts->getModels();
