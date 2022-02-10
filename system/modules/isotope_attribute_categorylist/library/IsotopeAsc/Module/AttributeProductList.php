@@ -433,8 +433,10 @@ class AttributeProductList extends \Isotope\Module\Module
         }
 
 		if (\Input::get('wwd') == 'yes' || $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
+			echo "SQL Values: ";
 			var_dump($queryBuilder->getSqlValues());
 			echo "<hr>";
+			echo "Filters: ";
 			var_dump($queryBuilder->getFilters());
 			echo "<hr>";
 		}
