@@ -439,7 +439,7 @@ class AttributeProductList extends \Isotope\Module\Module
 			echo "Filters (Off): ";
 			var_dump($queryBuilder->getFilters());
 			echo "<hr>";
-			echo "Current: Filters, no Sorting";
+			echo "Current: Filters, Sorting, no Ordering";
 			echo "<hr>";
 		}
 		
