@@ -439,7 +439,7 @@ class AttributeProductList extends \Isotope\Module\Module
 			echo "Filters (Off): ";
 			var_dump($queryBuilder->getFilters());
 			echo "<hr>";
-			echo "Current: Enabled Sorting";
+			echo "Current: Filters, no Sorting";
 			echo "<hr>";
 		}
 		
@@ -459,7 +459,7 @@ class AttributeProductList extends \Isotope\Module\Module
             $arrColumns,
 			$queryBuilder->getSqlValues(),
 			array(
-                 'order'   => 'c.sorting'
+                'filters' => $queryBuilder->getFilters()
 			)
         );
 		
