@@ -441,8 +441,6 @@ class AttributeProductList extends \Isotope\Module\Module
 			echo "<hr>";
 		}
 		
-		$queryBuilder->getFilters()
-		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
             $queryBuilder->getSqlValues(),
