@@ -232,25 +232,8 @@ class AttributeProductList extends \Isotope\Module\Module
                 $start = microtime(true);
 
                 // Load products
-				if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-					echo "Find Products Call<hr>";
-				}
                 $arrProducts = $this->findProducts($arrCacheIds, $attributeName, $attributeValueId);
 
-
-				
-				if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-					echo $pageAlias .'<hr>';
-					echo $_SERVER['REMOTE_ADDR'] .'<hr>';
-					echo $attributeName .'<hr>';
-					echo $strAttributeLabel .'<hr>';
-					echo $attributeId .'<hr>';
-					echo $attributeValue .'<hr>';
-					echo $cacheKey .'<hr>';
-					echo "Load Products: " .count($arrProducts) .'<hr>';
-					
-					die();
-				}
 
                 // Decide if we should show the "caching products" message the next time
                 $end = microtime(true) - $start;
@@ -294,23 +277,7 @@ class AttributeProductList extends \Isotope\Module\Module
             if (!empty($arrProducts)) {
                 $arrProducts = $this->generatePagination($arrProducts);
             }
-        } else {
-
-				
-				if (\Input::get('wwd') == 'yes' && $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-					echo $pageAlias .'<hr>';
-					echo $_SERVER['REMOTE_ADDR'] .'<hr>';
-					echo $attributeName .'<hr>';
-					echo $strAttributeLabel .'<hr>';
-					echo $attributeId .'<hr>';
-					echo $attributeValue .'<hr>';
-					echo $cacheKey .'<hr>';
-					echo "Products From Cache: " .count($arrProducts) .'<hr>';
-					
-					die();
-				}
-	
-		}
+        }
 
         // No products found
         if (!is_array($arrProducts) || empty($arrProducts)) {
@@ -420,40 +387,12 @@ class AttributeProductList extends \Isotope\Module\Module
             $arrColumns[] = $queryBuilder->getSqlWhere();
         }
 
-		if (\Input::get('wwd') == 'yes' || $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-			var_dump($arrColumns);
-			echo "<hr>";
-		}
-
         $arrSorting = Isotope::getRequestCache()->getSortingsForModules($this->iso_filterModules);
 
         if (empty($arrSorting) && $this->iso_listingSortField != '') {
             $direction = ('DESC' === $this->iso_listingSortDirection ? Sort::descending() : Sort::ascending());
             $arrSorting[$this->iso_listingSortField] = $direction;
-        }
-
-		if (\Input::get('wwd') == 'yes' || $_SERVER['REMOTE_ADDR'] == '73.16.96.16') {
-			echo "SQL Values: ";
-			var_dump($queryBuilder->getSqlValues());
-			echo "<hr>";
-			echo "Filters (Off): ";
-			var_dump($queryBuilder->getFilters());
-			echo "<hr>";
-			echo "Current: Filters, Sorting, no Ordering";
-			echo "<hr>";
-		}
-		
-		/*
-        $objProducts = Product::findAvailableBy(
-            $arrColumns,
-            $queryBuilder->getSqlValues(),
-            array(
-                 'order'   => 'c.sorting',
-                 'filters' => $queryBuilder->getFilters(),
-                 'sorting' => $arrSorting,
-            )
-        );
-		*/
+        }	
 		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
