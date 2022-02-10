@@ -455,7 +455,12 @@ class AttributeProductList extends \Isotope\Module\Module
 		
         $objProducts = Product::findAvailableBy(
             $arrColumns,
-			$queryBuilder->getSqlValues()
+			$queryBuilder->getSqlValues(),
+            array(
+                 'order'   => 'c.sorting',
+                 'filters' => $queryBuilder->getFilters(),
+                 'sorting' => $arrSorting,
+            )
         );
 		
 		$arrProducts = (null === $objProducts) ? array() : $objProducts->getModels();
