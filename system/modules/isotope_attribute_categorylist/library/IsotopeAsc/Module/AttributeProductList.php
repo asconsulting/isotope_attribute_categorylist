@@ -459,7 +459,8 @@ class AttributeProductList extends \Isotope\Module\Module
             $arrColumns,
 			$queryBuilder->getSqlValues(),
 			array(
-                'filters' => $queryBuilder->getFilters()
+                'filters' => $queryBuilder->getFilters(),
+                'sorting' => $arrSorting
 			)
         );
 		
