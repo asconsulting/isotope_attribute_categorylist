@@ -3,7 +3,7 @@
 /**
  * Isotope Attribute Category List
  *
- * Copyright (C) 2019 Andrew Stevens Consulting
+ * Copyright (C) 2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/isotope_attribute_categorylist
  * @link       https://andrewstevens.consulting
@@ -20,7 +20,7 @@
 /**
  * Table tl_iso_attribute
  */
-$GLOBALS['TL_DCA']['tl_iso_attribute']['config']['onsubmit_callback'][] = array('\IsotopeAsc\Backend\AttributeOption\CategoryOption', 'saveAttributeCategory');
+$GLOBALS['TL_DCA']['tl_iso_attribute']['config']['onsubmit_callback'][] = array('\CategoryList\Backend\AttributeOption\CategoryOption', 'saveAttributeCategory');
 
 $GLOBALS['TL_DCA']['tl_iso_attribute']['palettes']['attributeCategory'] = '{attribute_legend},name,field_name,type,legend,attributeListPage;{description_legend:hide},description;{options_legend},optionsTable;{config_legend},mandatory;{search_filters_legend},fe_filter,fe_sorting';
 

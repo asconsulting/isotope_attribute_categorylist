@@ -3,7 +3,7 @@
 /**
  * Isotope Attribute Category List
  *
- * Copyright (C) 2019 Andrew Stevens Consulting
+ * Copyright (C) 2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/isotope_attribute_categorylist
  * @link       https://andrewstevens.consulting
@@ -14,16 +14,16 @@
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_list']		 	= 'IsotopeAsc\Module\AttributeCategoryList'; 
-$GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_details']		= 'IsotopeAsc\Module\AttributeCategoryDetails'; 
-$GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_productlist']	= 'IsotopeAsc\Module\AttributeProductList'; 
+$GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_list']		 	= 'CategoryList\Module\AttributeCategoryList'; 
+$GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_details']		= 'CategoryList\Module\AttributeCategoryDetails'; 
+$GLOBALS['FE_MOD']['miscellaneous']['iso_attributecategory_productlist']	= 'CategoryList\Module\AttributeProductList'; 
 
 
 /**
  * Attributes
  */
-\Isotope\Model\Attribute::registerModelType('attributeCategory', 'IsotopeAsc\Model\Attribute\AttributeCategory');
-\Isotope\Model\Attribute::registerModelType('attribute', 'IsotopeAsc\Model\Attribute');
+\Isotope\Model\Attribute::registerModelType('attributeCategory', 'CategoryList\Model\Attribute\AttributeCategory');
+\Isotope\Model\Attribute::registerModelType('attribute', 'CategoryList\Model\Attribute');
 
 
 /**
@@ -35,10 +35,10 @@ $GLOBALS['BE_FFL']['attributeCategory'] = 'CheckBoxWizard';
 /**
  * Hooks
  */
-$GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('IsotopeAsc\Frontend\AttributeCategory', 'loadListPageFromUrl');
+$GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('CategoryList\Frontend\AttributeCategory', 'loadListPageFromUrl');
 
 
 /**
  * Models
  */ 
-$GLOBALS['TL_MODELS'][\Isotope\Model\Attribute::getTable()] = 'IsotopeAsc\Model\Attribute';
+$GLOBALS['TL_MODELS'][\Isotope\Model\Attribute::getTable()] = 'CategoryList\Model\Attribute';

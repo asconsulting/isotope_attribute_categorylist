@@ -3,7 +3,7 @@
 /**
  * Isotope Attribute Category List
  *
- * Copyright (C) 2019 Andrew Stevens Consulting
+ * Copyright (C) 2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/isotope_attribute_categorylist
  * @link       https://andrewstevens.consulting
@@ -11,7 +11,7 @@
  
 
 
-namespace IsotopeAsc\Model\Attribute;
+namespace CategoryList\Model\Attribute;
 
 use Isotope\Interfaces\IsotopeAttribute;
 use Isotope\Interfaces\IsotopeAttributeWithOptions;
@@ -21,7 +21,7 @@ use Isotope\Model\Attribute\AbstractAttributeWithOptions;
 
 
 /**
- * Class IsotopeAsc\Model\Attribute\AttributeCategory
+ * Class CategoryList\Model\Attribute\AttributeCategory
  */
 class AttributeCategory extends AbstractAttributeWithOptions implements IsotopeAttribute, IsotopeAttributeWithOptions
 {

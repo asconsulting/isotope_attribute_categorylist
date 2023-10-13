@@ -3,7 +3,7 @@
 /**
  * Isotope Attribute Category List
  *
- * Copyright (C) 2019 Andrew Stevens Consulting
+ * Copyright (C) 2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/isotope_attribute_categorylist
  * @link       https://andrewstevens.consulting
@@ -11,12 +11,12 @@
  
 
 
-namespace IsotopeAsc\Module;
+namespace CategoryList\Module;
 
 use Isotope\Module\Module;
 use Isotope\Model\Attribute;
 use Isotope\Model\AttributeOption;
-use IsotopeAsc\Model\Attribute\AttributeCategory;
+use CategoryList\Model\Attribute\AttributeCategory;
 
 
 /**

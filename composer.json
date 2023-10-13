@@ -22,8 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "IsotopeAsc\\": [
-                "system/modules/isotope_attribute_categorylist/library/IsotopeAsc"
+            "CategoryList\\": [
+                "system/modules/isotope_attribute_categorylist/library/CategoryList"
             ]
         }
     },

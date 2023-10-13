@@ -3,7 +3,7 @@
 /**
  * Isotope Attribute Category List
  *
- * Copyright (C) 2019 Andrew Stevens Consulting
+ * Copyright (C) 2023 Andrew Stevens Consulting
  *
  * @package    asconsulting/isotope_attribute_categorylist
  * @link       https://andrewstevens.consulting
@@ -16,13 +16,13 @@
  */
 ClassLoader::addClasses(array
 (
-	'IsotopeAsc\Frontend\AttributeCategory' 			=> 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Frontend/AttributeCategory.php',
-	'IsotopeAsc\Backend\AttributeOption\CategoryOption' => 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Backend/AttributeOption/CategoryOption.php',
-	'IsotopeAsc\Model\Attribute' 						=> 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Model/Attribute.php',
-	'IsotopeAsc\Model\Attribute\AttributeCategory' 		=> 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Model/Attribute/AttributeCategory.php',
-	'IsotopeAsc\Module\AttributeCategoryList' 			=> 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Module/AttributeCategoryList.php',
-    'IsotopeAsc\Module\AttributeCategoryDetails' 		=> 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Module/AttributeCategoryDetails.php',
-	'IsotopeAsc\Module\AttributeProductList' 			=> 'system/modules/isotope_attribute_categorylist/library/IsotopeAsc/Module/AttributeProductList.php',
+	'CategoryList\Frontend\AttributeCategory' 				=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Frontend/AttributeCategory.php',
+	'CategoryList\Backend\AttributeOption\CategoryOption' 	=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Backend/AttributeOption/CategoryOption.php',
+	'CategoryList\Model\Attribute' 							=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Model/Attribute.php',
+	'CategoryList\Model\Attribute\AttributeCategory' 		=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Model/Attribute/AttributeCategory.php',
+	'CategoryList\Module\AttributeCategoryList' 			=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Module/AttributeCategoryList.php',
+    'CategoryList\Module\AttributeCategoryDetails' 			=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Module/AttributeCategoryDetails.php',
+	'CategoryList\Module\AttributeProductList' 				=> 'system/modules/isotope_attribute_categorylist/library/CategoryList/Module/AttributeProductList.php',
 ));
 
 
