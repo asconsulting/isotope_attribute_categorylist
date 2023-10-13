@@ -13,9 +13,12 @@
 
 namespace CategoryList\Module;
 
+use Contao\StringUtil;
+
 use Haste\Generator\RowClass;
 use Haste\Http\Response\HtmlResponse;
 use Haste\Input\Input;
+
 use Isotope\Isotope;
 use Isotope\Model\Attribute;
 use Isotope\Model\AttributeOption;
@@ -23,9 +26,10 @@ use Isotope\Model\Product;
 use Isotope\Model\ProductCache;
 use Isotope\Model\ProductType;
 use Isotope\Module\Module;
-use CategoryList\Model\Attribute\AttributeCategory;
 use Isotope\RequestCache\FilterQueryBuilder;
 use Isotope\RequestCache\Sort;
+
+use CategoryList\Model\Attribute\AttributeCategory;
 
 
 /**
@@ -55,8 +59,8 @@ class AttributeProductList extends \Isotope\Module\Module
     {
         parent::__construct($objModule, $strColumn);
 
-        $this->iso_filterModules = deserialize($this->iso_filterModules);
-        $this->iso_productcache  = deserialize($this->iso_productcache);
+        $this->iso_filterModules = StringUtil::deserialize($this->iso_filterModules, true);
+        $this->iso_productcache  = StringUtil::deserialize($this->iso_productcache, true);
 
         if (!is_array($this->iso_filterModules)) {
             $this->iso_filterModules = array();
@@ -92,7 +96,7 @@ class AttributeProductList extends \Isotope\Module\Module
             return '';
         }
 
-        $this->iso_productcache  = deserialize($this->iso_productcache, true);
+        $this->iso_productcache  = StringUtil::deserialize($this->iso_productcache, true);
 
         // Disable the cache in frontend preview or debug mode
         if (BE_USER_LOGGED_IN === true || $GLOBALS['TL_CONFIG']['debugMode']) {
@@ -318,7 +322,7 @@ class AttributeProductList extends \Isotope\Module\Module
                 \Controller::redirect($objProduct->generateUrl($arrConfig['jumpTo']));
             }
 
-            $arrCSS = deserialize($objProduct->cssID, true);
+            $arrCSS = StringUtil::deserialize($objProduct->cssID, true);
 
             $arrBuffer[] = array(
                 'cssID'     => ($arrCSS[0] != '') ? ' id="' . $arrCSS[0] . '"' : '',

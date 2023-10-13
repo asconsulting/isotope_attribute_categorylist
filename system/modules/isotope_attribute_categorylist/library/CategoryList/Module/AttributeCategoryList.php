@@ -13,9 +13,12 @@
 
 namespace CategoryList\Module;
 
+use Contao\StringUtil;
+
 use Isotope\Module\Module;
 use Isotope\Model\Attribute;
 use Isotope\Model\AttributeOption;
+
 use CategoryList\Model\Attribute\AttributeCategory;
 
 
@@ -46,8 +49,8 @@ class AttributeCategoryList extends Module
     {
 		parent::__construct($objModule, $strColumn);
 
-        $this->iso_filterModules = deserialize($this->iso_filterModules);
-		$this->iso_productcache  = deserialize($this->iso_productcache);
+        $this->iso_filterModules = StringUtil::deserialize($this->iso_filterModules, true);
+		$this->iso_productcache  = StringUtil::deserialize($this->iso_productcache, true);
 
         if (!is_array($this->iso_filterModules)) {
             $this->iso_filterModules = array();
